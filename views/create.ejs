@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundo - create blogs</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/blogs">Blogs</a>
+    </nav>
+    <form action="/blogs" method="POST">
+      <label for="title">Title</label>
+      <input type="text" name="title" required />
+      <label for="snippet">Snippet</label>
+      <input type="text" name="snippet" required />
+      <label for="body">Body</label>
+      <textarea type="text" name="body" required></textarea>
+      <button>create blog</button>
+    </form>
+  </body>
+</html>
