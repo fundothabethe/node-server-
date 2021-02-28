@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 //get static info ... pics or styles etc
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 //middle ware for url encoding
 app.use(express.urlencoded({ extended: true }));
@@ -64,7 +64,27 @@ app.get("/create", (req, res) => {
   res.render("create");
 });
 
-app.get("blog/id");
+app.get("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  Blog.findById(id)
+    .then((blog) => {
+      res.render("blogId", { blog });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.delete("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndDelete(id)
+    .then((e) => {
+      res.json({ redirect: "/blogs" });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 app.post("/blogs", (req, res) => {
   const blog = new Blog(req.body);

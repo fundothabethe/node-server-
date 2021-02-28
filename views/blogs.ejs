@@ -9,18 +9,20 @@
   </head>
   <body>
     <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/create">Create Blog</a>
+      <a class="a" href="/">Home</a>
+      <a class="a" href="/about">About</a>
+      <a class="a" href="/create">Create Blog</a>
     </nav>
     <main class="content">
       <h2>All Blogs</h2>
-      <div class="container">
+      <div class="blog2 container">
         <% blog.map((e) => { %>
-        <a href="/blog/ <% blog._id %> " class="blogs link">
-          <h2><%= e.title %></h2>
-          <p><%= e.snippet %></p>
-          <p><%= e.body %></p>
+        <a href="/blogs/<%= e._id %> ">
+          <div class="blog1">
+            <h2><%= e.title %></h2>
+            <p><%= e.snippet %></p>
+            <p><%= e.body %></p>
+          </div>
         </a>
         <% }) %>
       </div>
