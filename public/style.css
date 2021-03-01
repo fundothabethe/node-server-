@@ -12,9 +12,11 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 0 20%;
+  padding: 1em;
 }
 @media screen and (max-width: 900px) {
   body {
+    padding: 0.2em;
     margin: 0;
     display: flex;
     align-items: center;
@@ -22,17 +24,28 @@ body {
   }
 }
 nav {
-  padding: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .a {
   padding: 1rem 2rem;
   font-size: 1.75rem;
   background-color: rgb(74, 78, 82);
   border-radius: 10px;
+  margin: 10px;
 }
 .a:hover {
   color: rgb(74, 78, 82);
   background-color: rgb(185, 185, 185);
+}
+@media screen and (max-width: 600px) {
+  .a {
+    padding: 0.5em;
+    margin: 2px;
+    font-size: 1em;
+  }
 }
 .content {
   margin: 2rem 0;
@@ -89,10 +102,17 @@ button {
     padding: 0.75rem;
     font-size: 1rem;
   }
+  textarea {
+    margin-bottom: 0.2rem;
+  }
+
   form {
     padding: 0.25rem;
     margin: 0.25rem;
     width: 95%;
+  }
+  input {
+    margin-bottom: 0.2rem;
   }
 }
 .blogs {
